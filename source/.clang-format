@@ -1,0 +1,11 @@
+BasedOnStyle: Google
+ColumnLimit: 80
+AccessModifierOffset: -2
+IndentCaseLabels: false
+PointerBindsToType: false
+NamespaceIndentation: All
+Standard: Cpp11
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+BreakBeforeBraces: Allman
