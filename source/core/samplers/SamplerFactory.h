@@ -5,13 +5,25 @@
 
 #include "samplers/StratifiedSampler.h"
 
+
 namespace Solstice
 {
-    std::unique_ptr<Sampler> FactorySampler(std::string p_type, int x_pixels, int y_pixels, bool jitter, int dims)
+    class SamplerParameters
     {
-        if (p_type == "stratified")
+    public:
+        std::string type;
+        int x_samples;
+        int y_samples;
+        bool jitter;
+        int dims;
+    };
+
+
+    std::unique_ptr<Sampler> SamplerFactory(SamplerParameters parameters)
+    {
+        if (parameters.type == "stratified")
         {
-            return std::move(std::make_unique<StratifiedSampler>(x_pixels, y_pixels, jitter, dims));
+            return std::move(std::make_unique<StratifiedSampler>(parameters.x_samples, parameters.y_samples, parameters.jitter, parameters.jitter));
         }
         std::cout << "No type detected" << std::endl;
         return nullptr;
