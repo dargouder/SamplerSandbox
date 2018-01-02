@@ -30,17 +30,17 @@ void StratifiedSample2D(Point2f *p_sample, int p_nx, int p_ny, RNG &p_rng,
 
 void StratifiedSampler::StartPixel(const Point2i &p_pixel) {
     /* Generate single stratified samples for the pixel */
-    for (size_t i = 0; i < _samples_1D.size(); ++i) {
-        StratifiedSample1D(&_samples_1D[i][0],
+    for (size_t i = 0; i < samples_1D.size(); ++i) {
+        StratifiedSample1D(&samples_1D[i][0],
                            _x_pixel_samples * _y_pixel_samples, rng,
                            _jitter_samples);
-        Shuffle(&_samples_1D[i][0], _x_pixel_samples * _y_pixel_samples, 1,
+        Shuffle(&samples_1D[i][0], _x_pixel_samples * _y_pixel_samples, 1,
                 rng);
     }
-    for (size_t i = 0; i < _samples_2D.size(); ++i) {
-        StratifiedSample2D(&_samples_2D[i][0], _x_pixel_samples,
+    for (size_t i = 0; i < samples_2D.size(); ++i) {
+        StratifiedSample2D(&samples_2D[i][0], _x_pixel_samples,
                            _y_pixel_samples, rng, _jitter_samples);
-        Shuffle(&_samples_2D[i][0], _x_pixel_samples * _y_pixel_samples, 1,
+        Shuffle(&samples_2D[i][0], _x_pixel_samples * _y_pixel_samples, 1,
                 rng);
     }
     /* Generate arrays of stratified samples for the pixel */

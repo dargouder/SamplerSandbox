@@ -16,9 +16,9 @@ namespace Solstice {
         Point2f Get2D();
 
       protected:
-        std::vector<std::vector<float>> _samples_1D;
-        std::vector<std::vector<Point2f>> _samples_2D;
-        int _current_1D_dimension = 0, _current_2D_dimension = 0;
+        std::vector<std::vector<float>> samples_1D;
+        std::vector<std::vector<Point2f>> samples_2D;
+        int current_1D_dimension = 0, current_2D_dimension = 0;
         RNG rng;
     };
 

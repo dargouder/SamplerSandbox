@@ -8,7 +8,11 @@ namespace Solstice {
 
 	class Ray;
 	class Vector3;
-	class SurfaceInteraction;
-	class BSDF;
+	class Sampler;
+	class RGBColour;
+    class HitRecord;
+	class Hitable;
+	class HitableList;
+
 
 }

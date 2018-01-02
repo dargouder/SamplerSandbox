@@ -16,7 +16,7 @@ namespace Solstice {
 			x = y = 0.0f;
 		}
 
-		Point2f(float p_x, float p_y) : x(p_x), y(p_y)
+		Point2f(const float p_x, const float p_y) : x(p_x), y(p_y)
 		{
 
 		}
@@ -44,6 +44,20 @@ namespace Solstice {
 	 	Point2f m_pixel_sample;
 	 	float m_time;
 	 	Point2f m_lens_sample;
+
+		 void BuildPixelSample(double nx_divisor, double ny_divisor, int pixel_x, int pixel_y)
+		 {
+			 m_pixel_sample.x *= nx_divisor;
+			 m_pixel_sample.y *= ny_divisor;
+
+			 float u = float(pixel_x) * float(nx_divisor);
+			 float v = float(pixel_y) * float(ny_divisor);
+
+			 m_pixel_sample.x += u;
+			 m_pixel_sample.y += v;
+		 }
+
+
 	 };
 
 	 Vector3 UniformSampleSphere(const Point2f &u);
@@ -102,4 +116,6 @@ namespace Solstice {
 	 	Point2i _current_pixel;
 	 	int64_t _current_pixel_sample_index;
 	 };
+
+
 }

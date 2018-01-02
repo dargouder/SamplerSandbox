@@ -8,7 +8,7 @@ namespace Solstice{
 	public:
 		Vector3 origin;
 		Vector3 direction;
-		/* Mutable so they can be modified when intersection rays need to update the hit point using the tmax. */
+		/* Mutable so they can be modified when intersection rays are const but need to update the hit point using the tmax. */
 		mutable float tmin;
 		mutable float tmax;
 		int depth;

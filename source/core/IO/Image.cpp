@@ -52,3 +52,8 @@ std::vector<unsigned char> Image::get_image() const {
 
     return image;
 }
+
+std::string Image::get_image_name() const
+{
+    return _name;
+}

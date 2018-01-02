@@ -15,7 +15,8 @@
 
  		void StartPixel(const Point2i& p_pixel);
  	private:
- 		const int _x_pixel_samples, _y_pixel_samples;
+ 		const int _x_pixel_samples;
+		const int _y_pixel_samples;
  		const bool _jitter_samples;
  	};
  }
