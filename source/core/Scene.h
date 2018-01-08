@@ -11,12 +11,12 @@ namespace Solstice
 {
     class Scene
     {
-    private:
+      private:
         HitableList list;
 
-    public:
+      public:
         void BuildFloorScene();
 
         bool Intersect(const Ray& r, HitRecord& record);
     };
-}
+}  // namespace Solstice

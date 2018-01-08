@@ -4,11 +4,6 @@
 
 #include "Renderer.h"
 
-
-
 using namespace Solstice;
 
-Renderer::Renderer()
-{
-
-}
+Renderer::Renderer() {}

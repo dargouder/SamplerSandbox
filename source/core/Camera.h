@@ -4,9 +4,10 @@
 #include "Ray.h"
 #include "Sampler.h"
 
-namespace Solstice {
-
-    class Camera {
+namespace Solstice
+{
+    class Camera
+    {
       private:
         Vector3 _lower_left_corner;
         Vector3 _horizontal;
@@ -23,7 +24,8 @@ namespace Solstice {
 
         Ray generate_ray(const CameraSample& p_camera_sample);
 
-        friend std::ostream& operator<<(std::ostream& os, const Camera& c) {
+        friend std::ostream& operator<<(std::ostream& os, const Camera& c)
+        {
             os << "camera {" << std::endl;
             os << "\tposition: " << c._position << std::endl;
             os << "}";

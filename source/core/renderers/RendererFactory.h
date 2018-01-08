@@ -4,15 +4,14 @@
 
 #pragma once
 
-
-#include "samplers/SamplerFactory.h"
 #include "renderers/SamplerRenderer.h"
+#include "samplers/SamplerFactory.h"
 
 namespace Solstice
 {
     class RendererParameters
     {
-    public:
+      public:
         std::string type;
         std::string image_name;
         int x_res;
@@ -24,12 +23,15 @@ namespace Solstice
     {
         if (parameters.type == "sampler")
         {
-            std::unique_ptr<Sampler> sampler = SamplerFactory(parameters.samplerParameters);
-            auto renderer = std::make_unique<SamplerRenderer>(std::move(sampler), parameters.x_res, parameters.y_res, parameters.image_name);
+            std::unique_ptr<Sampler> sampler =
+                SamplerFactory(parameters.samplerParameters);
+            auto renderer = std::make_unique<SamplerRenderer>(
+                std::move(sampler), parameters.x_res, parameters.y_res,
+                parameters.image_name);
             return std::move(renderer);
         }
         std::cout << "No type detected" << std::endl;
         return nullptr;
     }
 
-}
+}  // namespace Solstice

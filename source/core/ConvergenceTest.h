@@ -3,22 +3,19 @@
 //
 #pragma once
 
-
 #include <memory>
 
-#include "Scene.h"
 #include "RGBColour.h"
+#include "Scene.h"
 
 namespace Solstice
 {
     class ConvergenceTest
     {
-    public:
+      public:
         virtual RGBColour EvaluatePixel(const Ray& r) = 0;
 
         ConvergenceTest();
         ~ConvergenceTest();
-
-
     };
-}
+}  // namespace Solstice

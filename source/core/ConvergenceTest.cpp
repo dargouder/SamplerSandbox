@@ -6,11 +6,6 @@
 
 using namespace Solstice;
 
-ConvergenceTest::ConvergenceTest()
-{
+ConvergenceTest::ConvergenceTest() {}
 
-}
-
-ConvergenceTest::~ConvergenceTest() {
-
-}
+ConvergenceTest::~ConvergenceTest() {}

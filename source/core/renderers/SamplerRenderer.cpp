@@ -17,25 +17,22 @@
 
 using namespace Solstice;
 
-SamplerRenderer::SamplerRenderer() : image(0, 0, "")
-{
-
-}
+SamplerRenderer::SamplerRenderer() : image(0, 0, "") {}
 
 SamplerRenderer::SamplerRenderer(std::unique_ptr<Sampler> p_sampler,
-                                 int p_res_x,
-                                 int p_res_y,
-                                 std::string p_image_name)  : sampler(std::move(p_sampler)),
-                                                              res_x(p_res_x),
-                                                              res_y(p_res_y),
-                                                              image(p_res_x, p_res_y, p_image_name)
+                                 int p_res_x, int p_res_y,
+                                 std::string p_image_name)
+    : sampler(std::move(p_sampler)),
+      res_x(p_res_x),
+      res_y(p_res_y),
+      image(p_res_x, p_res_y, p_image_name)
 {
-
 }
 
-void SamplerRenderer::Render() {
+void SamplerRenderer::Render()
+{
     std::unique_ptr<ConvergenceTest> checkTest =
-            std::make_unique <CheckerboardTest>(300);
+        std::make_unique<CheckerboardTest>(300);
 
     int nx = res_x;
     int ny = res_y;
@@ -48,19 +45,21 @@ void SamplerRenderer::Render() {
     Camera camera(look_from, look_at, Vector3(0.0, 1.0, 0.0), 20.0,
                   double(nx) / double(ny), aperture, dist_to_focus);
 
-
     double nx_divisor = 1.0 / nx;
     double ny_divisor = 1.0 / ny;
     int ns = sampler->m_samples_per_pixel;
 
-    for (int j = 0; j < ny; j++) {
-        for (int i = 0; i < nx; i++) {
+    for (int j = 0; j < ny; j++)
+    {
+        for (int i = 0; i < nx; i++)
+        {
             RGBColour col(0);
             Point2i pixel(i, j);
 
             sampler->StartPixel(pixel);
 
-            do {
+            do
+            {
                 CameraSample cs = sampler->GetCameraSample(pixel);
 
                 cs.m_pixel_sample.x *= nx_divisor;

@@ -5,13 +5,11 @@
 #include "Scene.h"
 #include "Sphere.h"
 
-
 using namespace Solstice;
 
 void Scene::BuildFloorScene()
 {
-    list.list.push_back(
-            std::make_unique<Sphere>(Vector3(0, -1000, -6), 1000));
+    list.list.push_back(std::make_unique<Sphere>(Vector3(0, -1000, -6), 1000));
 }
 
 bool Scene::Intersect(const Ray& r, HitRecord& record)

@@ -6,17 +6,17 @@
 
 #include "ConvergenceTest.h"
 
-namespace Solstice {
-    class CheckerboardTest : public ConvergenceTest {
-    public:
-
+namespace Solstice
+{
+    class CheckerboardTest : public ConvergenceTest
+    {
+      public:
         RGBColour EvaluatePixel(const Ray& r);
 
         CheckerboardTest(const double p_checkerBoardSize = 200.0);
 
-    private:
+      private:
         double checkerBoardSize;
         Scene scene;
     };
-}
-
+}  // namespace Solstice

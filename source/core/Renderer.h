@@ -6,15 +6,13 @@
 #include <string>
 #include "Sampler.h"
 
-namespace Solstice {
-
-    class Renderer {
-
-    public:
+namespace Solstice
+{
+    class Renderer
+    {
+      public:
         Renderer();
         virtual void Render() = 0;
-
     };
 
-
-}
+}  // namespace Solstice

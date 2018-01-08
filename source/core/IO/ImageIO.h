@@ -1,14 +1,15 @@
 #pragma once
 
-#include "lodepng/lodepng.h"
 #include "Image.h"
+#include "lodepng/lodepng.h"
 
-namespace Solstice {
+namespace Solstice
+{
+    class ImageIO
+    {
+      public:
+        static bool export_png(std::string filename,
+                               std::vector<unsigned char>& image, int x, int y);
+    };
 
-	class ImageIO {
-
-	public:
-		static bool export_png(std::string filename, std::vector<unsigned char>& image, int x, int y);
-	};
-
-}
+}  // namespace Solstice

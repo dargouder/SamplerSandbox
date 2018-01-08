@@ -2,8 +2,10 @@
 #include "Random.h"
 #include "Sampler.h"
 
-namespace Solstice {
-    class PixelSampler : public Sampler {
+namespace Solstice
+{
+    class PixelSampler : public Sampler
+    {
       public:
         /* PixelSampler Public Methods */
         PixelSampler(int64_t p_samples_per_pixel, int p_n_sampled_dimensions);

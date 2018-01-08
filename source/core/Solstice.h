@@ -1,18 +1,17 @@
 #pragma once
 
-#include <vector>
-#include <memory>
 #include <iostream>
+#include <memory>
+#include <vector>
 
-namespace Solstice {
-
-	class Ray;
-	class Vector3;
-	class Sampler;
-	class RGBColour;
+namespace Solstice
+{
+    class Ray;
+    class Vector3;
+    class Sampler;
+    class RGBColour;
     class HitRecord;
-	class Hitable;
-	class HitableList;
+    class Hitable;
+    class HitableList;
 
-
-}
+}  // namespace Solstice

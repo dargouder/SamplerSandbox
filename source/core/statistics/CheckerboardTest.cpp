@@ -6,27 +6,33 @@
 
 using namespace Solstice;
 
-CheckerboardTest::CheckerboardTest(double p_checkerBoardSize) : checkerBoardSize(p_checkerBoardSize){
-
+CheckerboardTest::CheckerboardTest(double p_checkerBoardSize)
+    : checkerBoardSize(p_checkerBoardSize)
+{
     scene.BuildFloorScene();
-
 }
 
-
-RGBColour CheckerboardTest::EvaluatePixel(const Ray &r) {
+RGBColour CheckerboardTest::EvaluatePixel(const Ray &r)
+{
     HitRecord record;
 
-    if (scene.Intersect(r, record)) {
-
-        double sines = sin(checkerBoardSize * record.p.x) * sin(checkerBoardSize * record.p.y) *
+    if (scene.Intersect(r, record))
+    {
+        double sines = sin(checkerBoardSize * record.p.x) *
+                       sin(checkerBoardSize * record.p.y) *
                        sin(checkerBoardSize * record.p.z);
 
-        if (sines < 0) {
+        if (sines < 0)
+        {
             return RGBColour(1.0);
-        } else {
+        }
+        else
+        {
             return RGBColour(0.0);
         }
-    } else {
+    }
+    else
+    {
         return RGBColour(1.0);
     }
 }

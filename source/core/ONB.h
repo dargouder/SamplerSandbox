@@ -2,8 +2,10 @@
 
 #include "Vector3.h"
 
-namespace Solstice {
-    class OrthonormalBasis {
+namespace Solstice
+{
+    class OrthonormalBasis
+    {
       private:
         static const float Epsilon;
 
@@ -12,7 +14,8 @@ namespace Solstice {
 
       public:
         OrthonormalBasis() {}
-        OrthonormalBasis(const Vector3& a, const Vector3& b, const Vector3& c) {
+        OrthonormalBasis(const Vector3& a, const Vector3& b, const Vector3& c)
+        {
             U = a;
             V = b;
             W = c;
@@ -21,7 +24,8 @@ namespace Solstice {
         void InitFromWV(const Vector3& e, const Vector3& v);
 
         friend std::ostream& operator<<(std::ostream& os,
-                                        const OrthonormalBasis& o) {
+                                        const OrthonormalBasis& o)
+        {
             os << "ONB {" << std::endl;
             os << "\tU: " << o.U << std::endl;
             os << "\tV: " << o.V << std::endl;
