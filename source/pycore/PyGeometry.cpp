@@ -9,7 +9,7 @@
 
 namespace py = pybind11;
 
-PYBIND11_MODULE(PySampler, m)
+PYBIND11_MODULE(PyGeometry, m)
 {
     py::class_<Solstice::Point2i>(m, "Point2i")
         .def(py::init<>())
